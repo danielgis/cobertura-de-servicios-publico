@@ -1,0 +1,30 @@
+{
+  "showTitle": true,
+  "showBasemap": false,
+  "showLegend": true,
+  "expandAllLayersByDefault": false,
+  "contextMenu": {
+    "ZoomTo": true,
+    "Transparency": true,
+    "SetVisibilityRange": true,
+    "EnableOrDisablePopup": true,
+    "ControlLabels": true,
+    "MoveupOrMovedown": true,
+    "OpenAttributeTable": true,
+    "DescriptionOrShowItemDetailsOrDownload": true
+  },
+  "layerOptions": {
+    "cobertura_servicios_local_ciai_dev_2_9150": {
+      "display": true
+    },
+    "cobertura_servicios_vivienda_saf_dev_2_507": {
+      "display": false
+    },
+    "cobertura_servicios_local_sa_dev_8669": {
+      "display": true
+    },
+    "cobertura_servicios_local_ciai_dev_654": {
+      "display": true
+    }
+  }
+}
