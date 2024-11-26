@@ -10,21 +10,33 @@
     "EnableOrDisablePopup": true,
     "ControlLabels": true,
     "MoveupOrMovedown": true,
-    "OpenAttributeTable": true,
-    "DescriptionOrShowItemDetailsOrDownload": true
+    "OpenAttributeTable": false,
+    "DescriptionOrShowItemDetailsOrDownload": false
   },
   "layerOptions": {
+    "cobertura_servicios_local_sa_dev_2_7270": {
+      "display": true
+    },
     "cobertura_servicios_local_ciai_dev_2_9150": {
       "display": true
+    },
+    "cobertura_servicios_vivienda_saf_dev_2_507_2727": {
+      "display": false
     },
     "cobertura_servicios_vivienda_saf_dev_2_507": {
       "display": false
     },
-    "cobertura_servicios_local_sa_dev_8669": {
-      "display": true
+    "cobertura_servicios_vivienda_saf_grid_10k_dev_3_4373": {
+      "display": false
     },
-    "cobertura_servicios_local_ciai_dev_654": {
-      "display": true
+    "cobertura_servicios_vivienda_saf_grid_20k_dev_3_5070": {
+      "display": false
+    },
+    "cobertura_servicios_local_ciai_dev_2_449": {
+      "display": false
+    },
+    "cobertura_servicios_local_ciai_dev_2_2865": {
+      "display": false
     }
   }
 }

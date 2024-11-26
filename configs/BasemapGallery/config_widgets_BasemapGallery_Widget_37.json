@@ -3,8 +3,8 @@
     "mode": 2,
     "basemaps": [
       {
-        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_1_1732035507645.png",
-        "title": "OpenStreetMap",
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_1_1732584597056.png",
+        "title": "OpenStreetMap 1",
         "layers": [
           {
             "opacity": 1,
@@ -20,8 +20,8 @@
         }
       },
       {
-        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_2_1732035507647.png",
-        "title": "Imágenes",
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_2_1732584597057.png",
+        "title": "Imágenes 1",
         "layers": [
           {
             "opacity": 1,
@@ -31,10 +31,11 @@
             "layerType": "ArcGISTiledMapServiceLayer",
             "id": "World_Imagery_2017",
             "serviceInfoResponse": {
-              "currentVersion": 10.91,
-              "serviceDescription": "World Imagery provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. The map includes 15m TerraColor imagery at small and mid-scales (~1:591M down to ~1:288k) for the world. The map features Maxar imagery at 0.3m resolution for select metropolitan areas around the world, 0.5m resolution across the United States and parts of Western Europe, and 1m resolution imagery across the rest of the world. In addition to commercial sources, the World Imagery map features high-resolution aerial photography contributed by the GIS User Community. This imagery ranges from 0.3m to 0.03m resolution (down to ~1:280 in select communities). For more information on this map, including the terms of use, visit us <a href=\"http://goto.arcgisonline.com/maps/World_Imagery \" target=\"_new\" >online</a>.",
+              "currentVersion": 11.3,
+              "cimVersion": "3.3.0",
+              "serviceDescription": "<div style='text-align:Left;font-size:12pt'><p><span>World Imagery provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. The map includes 15m TerraColor imagery at small and mid-scales (~1:591M down to ~1:288k) for the world. The map features Maxar imagery at 0.3m resolution for select metropolitan areas around the world, 0.5m resolution across the United States and parts of Western Europe, and 1m resolution imagery across the rest of the world. In addition to commercial sources, the World Imagery map features high-resolution aerial photography contributed by the GIS User Community. This imagery ranges from 0.3m to 0.03m resolution (down to ~1:280 in select communities). For more information on this map, including the terms of use, visit us online at https://goto.arcgisonline.com/maps/World_Imagery</span></p></div>",
               "mapName": "Layers",
-              "description": "World Imagery provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. The map includes 15m TerraColor imagery at small and mid-scales (~1:591M down to ~1:288k) for the world. The map features Maxar imagery at 0.3m resolution for select metropolitan areas around the world, 0.5m resolution across the United States and parts of Western Europe, and 1m resolution imagery across the rest of the world. In addition to commercial sources, the World Imagery map features high-resolution aerial photography contributed by the GIS User Community. This imagery ranges from 0.3m to 0.03m resolution (down to ~1:280 in select communities). For more information on this map, including the terms of use, visit us online at http://goto.arcgisonline.com/maps/World_Imagery",
+              "description": "<DIV STYLE=\"text-align:Left;font-size:12pt\"><P><SPAN>World Imagery provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. The map includes 15m TerraColor imagery at small and mid-scales (~1:591M down to ~1:288k) for the world. The map features Maxar imagery at 0.3m resolution for select metropolitan areas around the world, 0.5m resolution across the United States and parts of Western Europe, and 1m resolution imagery across the rest of the world. In addition to commercial sources, the World Imagery map features high-resolution aerial photography contributed by the GIS User Community. This imagery ranges from 0.3m to 0.03m resolution (down to ~1:280 in select communities). For more information on this map, including the terms of use, visit us online at https://goto.arcgisonline.com/maps/World_Imagery</SPAN></P></DIV>",
               "copyrightText": "Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
               "supportsDynamicLayers": false,
               "layers": [
@@ -47,7 +48,8 @@
                   "minScale": 0,
                   "maxScale": 0,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 1,
@@ -58,7 +60,8 @@
                   "minScale": 0,
                   "maxScale": 0,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 2,
@@ -69,7 +72,8 @@
                   "minScale": 0,
                   "maxScale": 0,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 3,
@@ -80,7 +84,8 @@
                   "minScale": 0,
                   "maxScale": 0,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 4,
@@ -91,7 +96,8 @@
                   "minScale": 0,
                   "maxScale": 0,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 5,
@@ -102,7 +108,8 @@
                   "minScale": 106,
                   "maxScale": 0,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 6,
@@ -113,7 +120,8 @@
                   "minScale": 212,
                   "maxScale": 106,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 7,
@@ -124,7 +132,8 @@
                   "minScale": 425,
                   "maxScale": 212,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 8,
@@ -135,7 +144,8 @@
                   "minScale": 850,
                   "maxScale": 425,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 9,
@@ -146,7 +156,8 @@
                   "minScale": 1700,
                   "maxScale": 850,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 10,
@@ -157,7 +168,8 @@
                   "minScale": 3400,
                   "maxScale": 1700,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 11,
@@ -168,7 +180,8 @@
                   "minScale": 6800,
                   "maxScale": 3400,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 12,
@@ -179,7 +192,8 @@
                   "minScale": 13500,
                   "maxScale": 6800,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 13,
@@ -190,7 +204,8 @@
                   "minScale": 27000,
                   "maxScale": 13500,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 14,
@@ -201,7 +216,8 @@
                   "minScale": 54000,
                   "maxScale": 27000,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 15,
@@ -212,7 +228,8 @@
                   "minScale": 108000,
                   "maxScale": 54000,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 16,
@@ -223,7 +240,8 @@
                   "minScale": 216000,
                   "maxScale": 108000,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 17,
@@ -234,7 +252,8 @@
                   "minScale": 432000,
                   "maxScale": 216000,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 },
                 {
                   "id": 18,
@@ -245,13 +264,24 @@
                   "minScale": 0,
                   "maxScale": 432000,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 }
               ],
               "tables": [],
               "spatialReference": {
                 "wkid": 102100,
-                "latestWkid": 3857
+                "latestWkid": 3857,
+                "xyTolerance": 0.001,
+                "zTolerance": 0.001,
+                "mTolerance": 0.001,
+                "falseX": -20037700,
+                "falseY": -30241100,
+                "xyUnits": 10000,
+                "falseZ": -100000,
+                "zUnits": 10000,
+                "falseM": -100000,
+                "mUnits": 10000
               },
               "singleFusedMapCache": true,
               "tileInfo": {
@@ -266,7 +296,17 @@
                 },
                 "spatialReference": {
                   "wkid": 102100,
-                  "latestWkid": 3857
+                  "latestWkid": 3857,
+                  "xyTolerance": 0.001,
+                  "zTolerance": 0.001,
+                  "mTolerance": 0.001,
+                  "falseX": -22041259.214859996,
+                  "falseY": -32754895.973320004,
+                  "xyUnits": 142980504.00783738,
+                  "falseZ": -100000,
+                  "zUnits": 10000,
+                  "falseM": -100000,
+                  "mUnits": 10000
                 },
                 "lods": [
                   {
@@ -391,11 +431,15 @@
                   }
                 ]
               },
+              "storageInfo": {
+                "storageFormat": "esriMapCacheStorageModeCompactV2",
+                "packetSize": 128
+              },
               "initialExtent": {
-                "xmin": -27465501.425151497,
-                "ymin": -19971868.88040859,
-                "xmax": 27465501.425151497,
-                "ymax": 19971868.880408563,
+                "xmin": -22815791.376046296,
+                "ymin": -21991988.08761979,
+                "xmax": 22815791.376046296,
+                "ymax": 22036142.269084483,
                 "spatialReference": {
                   "cs": "pcs",
                   "wkid": 102100
@@ -411,22 +455,25 @@
                   "wkid": 102100
                 }
               },
+              "datesInUnknownTimezone": false,
               "minScale": 0,
               "maxScale": 0,
               "units": "esriMeters",
               "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP",
               "documentInfo": {
-                "Title": "World Imagery",
-                "Author": "Esri",
-                "Comments": "",
+                "Title": "Layers",
+                "Author": "",
+                "Comments": "<DIV STYLE=\"text-align:Left;font-size:12pt\"><P><SPAN>World Imagery provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. The map includes 15m TerraColor imagery at small and mid-scales (~1:591M down to ~1:288k) for the world. The map features Maxar imagery at 0.3m resolution for select metropolitan areas around the world, 0.5m resolution across the United States and parts of Western Europe, and 1m resolution imagery across the rest of the world. In addition to commercial sources, the World Imagery map features high-resolution aerial photography contributed by the GIS User Community. This imagery ranges from 0.3m to 0.03m resolution (down to ~1:280 in select communities). For more information on this map, including the terms of use, visit us online at https://goto.arcgisonline.com/maps/World_Imagery</SPAN></P></DIV>",
                 "Subject": "imagery, satellite, aerial, 500m (World), 15m (World)",
-                "Category": "imageryBaseMapsEarthCover (Imagery, basemaps, and land cover)",
-                "AntialiasingMode": "None",
+                "Category": "",
+                "Version": "3.1.0",
+                "AntialiasingMode": "Fast",
                 "TextAntialiasingMode": "Force",
                 "Keywords": "World,Global,United States"
               },
-              "capabilities": "Map,Tilemap,Query,Data",
-              "supportedQueryFormats": "JSON, geoJSON",
+              "supportsQueryDomains": true,
+              "capabilities": "Map,Query,Data,Tilemap",
+              "supportedQueryFormats": "JSON, geoJSON, PBF",
               "exportTilesAllowed": false,
               "referenceScale": 0,
               "datumTransformations": [
@@ -452,6 +499,16 @@
                 }
               ],
               "supportsDatumTransformation": true,
+              "archivingInfo": {
+                "supportsHistoricMoment": false
+              },
+              "supportsClipping": true,
+              "supportsSpatialFilter": true,
+              "supportsTimeRelation": true,
+              "supportsQueryDataElements": true,
+              "mapUnits": {
+                "uwkid": 9001
+              },
               "maxRecordCount": 100,
               "maxImageHeight": 4096,
               "maxImageWidth": 4096,
@@ -465,8 +522,8 @@
         }
       },
       {
-        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_3_1732035507648.png",
-        "title": "Calles",
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_3_1732584597058.png",
+        "title": "Calles 1",
         "layers": [
           {
             "opacity": 1,
@@ -476,29 +533,41 @@
             "layerType": "ArcGISTiledMapServiceLayer",
             "id": "World_Street_Map_8421",
             "serviceInfoResponse": {
-              "currentVersion": 10.91,
-              "serviceDescription": "This worldwide street map presents highway-level data for the world. Street-level data includes the United States; much of Canada; Mexico; Europe; Japan; Australia and New Zealand; India; South America and Central America; Africa; and most of the Middle East. This comprehensive street map includes highways, major roads, minor roads, one-way arrow indicators, railways, water features, administrative boundaries, cities, parks, and landmarks, overlaid on shaded relief imagery for added context. The map also includes building footprints for selected areas. Coverage is provided down to ~1:4k with ~1:1k and ~1:2k data available in select urban areas. The street map was developed by Esri using Esri basemap data, Garmin basemap layers, U.S. Geological Survey (USGS) elevation data, Intact Forest Landscape (IFL) data for the world; HERE data for Europe, Australia and New Zealand, North America, South America and Central America, Africa, India, and most of the Middle East; OpenStreetMap contributors for select countries in Africa and Pacific Islands; NGCC data for China; and select data from the GIS user community. For more information on this map, including the terms of use, visit us <a href=\"http://goto.arcgisonline.com/maps/World_Street_Map \" target=\"_new\" >online</a>.",
+              "currentVersion": 11.3,
+              "cimVersion": "3.3.0",
+              "serviceDescription": "<div style='text-align:Left;font-size:12pt'><p><span>This worldwide street map presents highway-level data for the world. Street-level data includes the United States; much of Canada; Mexico; Europe; Japan; Australia and New Zealand; India; South America and Central America; Africa; and most of the Middle East. This comprehensive street map includes highways, major roads, minor roads, one-way arrow indicators, railways, water features, administrative boundaries, cities, parks, and landmarks, overlaid on shaded relief imagery for added context. The map also includes building footprints for selected areas. Coverage is provided down to ~1:4k with ~1:1k and ~1:2k data available in select urban areas. The street map was developed by Esri using Esri basemap data, Garmin basemap layers, U.S. Geological Survey (USGS) elevation data, Intact Forest Landscape (IFL) data for the world; HERE data for Europe, Australia and New Zealand, North America, South America and Central America, Africa, India, and most of the Middle East; OpenStreetMap contributors for select countries in Africa and Pacific Islands; NGCC data for China; and select data from the GIS user community. For more information on this map, including the terms of use, visit us online at https://goto.arcgisonline.com/maps/World_Street_Map</span></p></div>",
               "mapName": "Layers",
-              "description": "This worldwide street map presents highway-level data for the world. Street-level data includes the United States; much of Canada; Mexico; Europe; Japan; Australia and New Zealand; India; South America and Central America; Africa; and most of the Middle East. This comprehensive street map includes highways, major roads, minor roads, one-way arrow indicators, railways, water features, administrative boundaries, cities, parks, and landmarks, overlaid on shaded relief imagery for added context. The map also includes building footprints for selected areas. Coverage is provided down to ~1:4k with ~1:1k and ~1:2k data available in select urban areas. The street map was developed by Esri using Esri basemap data, Garmin basemap layers, U.S. Geological Survey (USGS) elevation data, Intact Forest Landscape (IFL) data for the world; HERE data for Europe, Australia and New Zealand, North America, South America and Central America, Africa, India, and most of the Middle East; OpenStreetMap contributors for select countries in Africa and Pacific Islands; NGCC data for China; and select data from the GIS user community. For more information on this map, including the terms of use, visit us online at http://goto.arcgisonline.com/maps/World_Street_Map",
+              "description": "<DIV STYLE=\"text-align:Left;font-size:12pt\"><P><SPAN>This worldwide street map presents highway-level data for the world. Street-level data includes the United States; much of Canada; Mexico; Europe; Japan; Australia and New Zealand; India; South America and Central America; Africa; and most of the Middle East. This comprehensive street map includes highways, major roads, minor roads, one-way arrow indicators, railways, water features, administrative boundaries, cities, parks, and landmarks, overlaid on shaded relief imagery for added context. The map also includes building footprints for selected areas. Coverage is provided down to ~1:4k with ~1:1k and ~1:2k data available in select urban areas. The street map was developed by Esri using Esri basemap data, Garmin basemap layers, U.S. Geological Survey (USGS) elevation data, Intact Forest Landscape (IFL) data for the world; HERE data for Europe, Australia and New Zealand, North America, South America and Central America, Africa, India, and most of the Middle East; OpenStreetMap contributors for select countries in Africa and Pacific Islands; NGCC data for China; and select data from the GIS user community. For more information on this map, including the terms of use, visit us online at https://goto.arcgisonline.com/maps/World_Street_Map</SPAN></P></DIV>",
               "copyrightText": "Sources: Esri, HERE, Garmin, USGS, Intermap, INCREMENT P, NRCan, Esri Japan, METI, Esri China (Hong Kong), Esri Korea, Esri (Thailand), NGCC, (c) OpenStreetMap contributors, and the GIS User Community",
               "supportsDynamicLayers": false,
               "layers": [
                 {
                   "id": 0,
-                  "name": "World Street Map",
+                  "name": "World_Street_Map",
                   "parentLayerId": -1,
                   "defaultVisibility": true,
                   "subLayerIds": null,
                   "minScale": 0,
                   "maxScale": 0,
                   "type": "Feature Layer",
-                  "geometryType": "esriGeometryPolygon"
+                  "geometryType": "esriGeometryPolygon",
+                  "supportsDynamicLegends": true
                 }
               ],
               "tables": [],
               "spatialReference": {
                 "wkid": 102100,
-                "latestWkid": 3857
+                "latestWkid": 3857,
+                "xyTolerance": 0.001,
+                "zTolerance": 0.001,
+                "mTolerance": 0.001,
+                "falseX": -20037700,
+                "falseY": -30241100,
+                "xyUnits": 10000,
+                "falseZ": -100000,
+                "zUnits": 10000,
+                "falseM": -100000,
+                "mUnits": 10000
               },
               "singleFusedMapCache": true,
               "tileInfo": {
@@ -513,7 +582,17 @@
                 },
                 "spatialReference": {
                   "wkid": 102100,
-                  "latestWkid": 3857
+                  "latestWkid": 3857,
+                  "xyTolerance": 0.001,
+                  "zTolerance": 0.0002,
+                  "mTolerance": 0.0002,
+                  "falseX": -22041257.77387803,
+                  "falseY": -32799975.42235916,
+                  "xyUnits": 142878261.42550784,
+                  "falseZ": -100000,
+                  "zUnits": 10000,
+                  "falseM": -100000,
+                  "mUnits": 10000
                 },
                 "lods": [
                   {
@@ -638,11 +717,15 @@
                   }
                 ]
               },
+              "storageInfo": {
+                "storageFormat": "esriMapCacheStorageModeCompactV2",
+                "packetSize": 128
+              },
               "initialExtent": {
-                "xmin": -33938403.394018404,
-                "ymin": -21018670.283795536,
-                "xmax": 33938403.394018404,
-                "ymax": 21018670.283795446,
+                "xmin": -20037507.067161843,
+                "ymin": -22034465.843478568,
+                "xmax": 20037507.067161843,
+                "ymax": 22078620.024943195,
                 "spatialReference": {
                   "cs": "pcs",
                   "wkid": 102100
@@ -650,56 +733,89 @@
               },
               "fullExtent": {
                 "xmin": -20037507.067161843,
-                "ymin": -19971868.8804086,
+                "ymin": -19990709.43504232,
                 "xmax": 20037507.067161843,
-                "ymax": 19971868.880408484,
+                "ymax": 20034863.616507012,
                 "spatialReference": {
                   "cs": "pcs",
                   "wkid": 102100
                 }
               },
+              "datesInUnknownTimezone": false,
               "minScale": 0,
               "maxScale": 0,
               "units": "esriMeters",
               "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP",
               "documentInfo": {
-                "Title": "World Street Map",
-                "Author": "Esri",
-                "Comments": "",
-                "Subject": "streets, highways, major roads, railways, water features, administrative boundaries, cities, parks, protected areas, landmarks ",
-                "Category": "transportation(Transportation Networks) ",
-                "AntialiasingMode": "None",
+                "Title": "Map",
+                "Author": "",
+                "Comments": "<DIV STYLE=\"text-align:Left;font-size:12pt\"><P><SPAN>This worldwide street map presents highway-level data for the world. Street-level data includes the United States; much of Canada; Mexico; Europe; Japan; Australia and New Zealand; India; South America and Central America; Africa; and most of the Middle East. This comprehensive street map includes highways, major roads, minor roads, one-way arrow indicators, railways, water features, administrative boundaries, cities, parks, and landmarks, overlaid on shaded relief imagery for added context. The map also includes building footprints for selected areas. Coverage is provided down to ~1:4k with ~1:1k and ~1:2k data available in select urban areas. The street map was developed by Esri using Esri basemap data, Garmin basemap layers, U.S. Geological Survey (USGS) elevation data, Intact Forest Landscape (IFL) data for the world; HERE data for Europe, Australia and New Zealand, North America, South America and Central America, Africa, India, and most of the Middle East; OpenStreetMap contributors for select countries in Africa and Pacific Islands; NGCC data for China; and select data from the GIS user community. For more information on this map, including the terms of use, visit us online at https://goto.arcgisonline.com/maps/World_Street_Map</SPAN></P></DIV>",
+                "Subject": "In mature support; no longer updated.",
+                "Category": "",
+                "Version": "3.1.0",
+                "AntialiasingMode": "Fast",
                 "TextAntialiasingMode": "Force",
                 "Keywords": "World,Global,Europe,Japan,Hong Kong,North America,United States,Canada,Mexico,Southern Africa,Asia,South America,Australia,New Zealand,India,Argentina,Brazil,Chile,Venezuela,Andorra,Austria,Belgium,Czech Republic,Denmark,France,Germany,Great Britain,Greece,Hungary,Ireland,Italy,Luxembourg,Netherlands,Norway,Poland,Portugal,San Marino,Slovakia,Spain,Sweden,Switzerland,Russia,Thailand,Turkey"
               },
+              "supportsQueryDomains": true,
               "capabilities": "Map,Tilemap",
-              "supportedQueryFormats": "JSON, geoJSON",
+              "supportedQueryFormats": "JSON, geoJSON, PBF",
               "exportTilesAllowed": false,
               "referenceScale": 0,
               "datumTransformations": [
                 {
                   "geoTransforms": [
                     {
-                      "wkid": 108001,
-                      "latestWkid": 1241,
-                      "transformForward": true,
-                      "name": "NAD_1927_To_NAD_1983_NADCON"
+                      "wkid": 108100,
+                      "latestWkid": 15973,
+                      "transformForward": false,
+                      "name": "WGS_1984_Major_Auxiliary_Sphere_To_WGS_1984"
                     }
                   ]
                 },
                 {
                   "geoTransforms": [
                     {
-                      "wkid": 108001,
-                      "latestWkid": 1241,
+                      "wkid": 108100,
+                      "latestWkid": 15973,
+                      "transformForward": true,
+                      "name": "WGS_1984_Major_Auxiliary_Sphere_To_WGS_1984"
+                    }
+                  ]
+                },
+                {
+                  "geoTransforms": [
+                    {
+                      "wkid": 108100,
+                      "latestWkid": 15973,
                       "transformForward": false,
-                      "name": "NAD_1927_To_NAD_1983_NADCON"
+                      "name": "WGS_1984_Major_Auxiliary_Sphere_To_WGS_1984"
+                    }
+                  ]
+                },
+                {
+                  "geoTransforms": [
+                    {
+                      "wkid": 108100,
+                      "latestWkid": 15973,
+                      "transformForward": true,
+                      "name": "WGS_1984_Major_Auxiliary_Sphere_To_WGS_1984"
                     }
                   ]
                 }
               ],
               "supportsDatumTransformation": true,
-              "maxRecordCount": 1000,
+              "archivingInfo": {
+                "supportsHistoricMoment": false
+              },
+              "supportsClipping": true,
+              "supportsSpatialFilter": true,
+              "supportsTimeRelation": true,
+              "supportsQueryDataElements": true,
+              "mapUnits": {
+                "uwkid": 9001
+              },
+              "maxRecordCount": 2000,
               "maxImageHeight": 4096,
               "maxImageWidth": 4096,
               "supportedExtensions": "KmlServer"
@@ -712,7 +828,7 @@
         }
       },
       {
-        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_4_1732035507650.png",
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_4_1732584597059.png",
         "title": "Topográfico",
         "layers": [
           {
@@ -959,7 +1075,7 @@
         }
       },
       {
-        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_5_1732035507651.png",
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/base64Img_widgets_BasemapGallery_Widget_37_5_1732584597060.png",
         "title": "Imágenes con etiquetas",
         "layers": [
           {

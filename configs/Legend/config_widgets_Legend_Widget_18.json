@@ -1,0 +1,32 @@
+{
+  "legend": {
+    "arrangement": 0,
+    "autoUpdate": true,
+    "respectCurrentMapScale": true
+  },
+  "layerState": {
+    "cobertura_servicios_local_sa_dev_2_7270": {
+      "selected": true
+    },
+    "cobertura_servicios_local_ciai_dev_2_9150": {
+      "selected": true
+    },
+    "cobertura_servicios_vivienda_saf_dev_2_507_2727": {
+      "selected": false
+    },
+    "cobertura_servicios_vivienda_saf_dev_2_507": {
+      "selected": false
+    },
+    "cobertura_servicios_vivienda_saf_grid_10k_dev_3_4373": {
+      "selected": false
+    },
+    "cobertura_servicios_vivienda_saf_grid_20k_dev_3_5070": {
+      "selected": false
+    },
+    "cobertura_servicios_local_ciai_dev_2_449": {
+      "selected": false
+    }
+  },
+  "syncWithWebmap": false,
+  "showLegendForBasemap": false
+}
