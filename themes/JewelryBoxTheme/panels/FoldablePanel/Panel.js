@@ -15,19 +15,19 @@
 ///////////////////////////////////////////////////////////////////////////
 
 define(['dojo/_base/declare',
-    'dojo/_base/lang',
-    'dojo/_base/html',
-    'dojo/_base/array',
-    'dojo/on',
-    'dojo/keys',
-    'dojo/aspect',
-    'jimu/BaseWidgetPanel',
-    'jimu/BaseWidgetFrame',
-    'jimu/utils',
-    './FoldableDijit',
-    './FoldableWidgetFrame'
-  ],
-  function(
+  'dojo/_base/lang',
+  'dojo/_base/html',
+  'dojo/_base/array',
+  'dojo/on',
+  'dojo/keys',
+  'dojo/aspect',
+  'jimu/BaseWidgetPanel',
+  'jimu/BaseWidgetFrame',
+  'jimu/utils',
+  './FoldableDijit',
+  './FoldableWidgetFrame'
+],
+  function (
     declare, lang, html, array, on, keys, aspect, BaseWidgetPanel,
     BaseWidgetFrame, utils, FoldableDijit, FoldableWidgetFrame
   ) {
@@ -44,10 +44,10 @@ define(['dojo/_base/declare',
       closeAnimation: 'fadeOut',
       animationDuration: 500,
 
-      postMixInProperties:function(){
+      postMixInProperties: function () {
         this.headerNls = window.jimuNls.panelHeader;
       },
-      startup: function() {
+      startup: function () {
         this.titleHeight = 35;
         this.inherited(arguments);
 
@@ -60,22 +60,22 @@ define(['dojo/_base/declare',
         this.createCloseBtn();
         this.panelManager.normalizePanel(this);
 
-        this.own(on(this.domNode, 'keydown', lang.hitch(this, function(evt){
-          if(!html.hasClass(evt.target, 'close-btn') && evt.keyCode === keys.ESCAPE){
+        this.own(on(this.domNode, 'keydown', lang.hitch(this, function (evt) {
+          if (!html.hasClass(evt.target, 'close-btn') && evt.keyCode === keys.ESCAPE) {
             this.closeNode.focus();
           }
         })));
       },
 
-      getPanelPosition: function(){
+      getPanelPosition: function () {
         if (window.appInfo.isRunInMobile) {
           return this.panelManager.getPositionOnMobile(this);
         } else {
           var pos = lang.clone(this.position);
-          if(typeof pos.width === 'undefined'){
+          if (typeof pos.width === 'undefined') {
             pos.width = 360;
           }
-          if(this.windowState === 'minimized'){
+          if (this.windowState === 'minimized') {
             pos.bottom = 'auto';
             pos.height = this.titleHeight;
             pos.borderRadiusStyle = {
@@ -84,9 +84,9 @@ define(['dojo/_base/declare',
               borderBottomLeftRadius: 0,
               borderBottomRightRadius: 0
             };
-          }else{
+          } else {
             pos.bottom = this.position.bottom;
-            pos.height = 'auto';
+            pos.height = '400px';
             pos.borderRadiusStyle = {
               borderTopLeftRadius: borderRadius,
               borderTopRightRadius: borderRadius,
@@ -99,37 +99,43 @@ define(['dojo/_base/declare',
         }
       },
 
-      onOpen: function(){
+      onOpen: function () {
         this.inherited(arguments);
         this.onNormalize();
         //normalizePanel when cursor leaves the panel.
-        if(utils.isInNavMode() && this.windowState === 'minimized') {
+        if (utils.isInNavMode() && this.windowState === 'minimized') {
           this.onFoldableNodeClick();
         }
       },
 
-      onNormalize: function(){
+      onNormalize: function () {
         this.resize();
       },
 
-      onMaximize: function(){
+      onMaximize: function () {
         this.resize();
       },
 
-      onMinimize: function(){
+      onMinimize: function () {
         this.resize();
       },
 
-      resize: function() {
+      resize: function () {
         this._switchMaxBtn();
         this._switchParentNode();
 
         var pos = this.getPanelPosition();
-        if(this.position.zIndex){
+        if (this.position.zIndex) {
           pos.zIndex = this.position.zIndex;
         }
         var style = utils.getPositionStyle(pos);
         lang.mixin(style, pos.borderRadiusStyle);
+
+        style.marginTop = 0;
+        style.marginBottom = 0;
+        style.marginLeft = 0;
+        style.marginRight = 0;
+
         html.setStyle(this.domNode, style);
 
         if (this.getChildren().length > 1) {
@@ -139,7 +145,7 @@ define(['dojo/_base/declare',
         this.inherited(arguments);
       },
 
-      reloadWidget: function(widgetConfig) {
+      reloadWidget: function (widgetConfig) {
         this.inherited(arguments);
         if (!this.isWidgetInPanel(widgetConfig)) {
           return;
@@ -149,46 +155,46 @@ define(['dojo/_base/declare',
         }
       },
 
-      updateConfig: function(_config) {
+      updateConfig: function (_config) {
         this.inherited(arguments);
         this.setTitleLabel(_config.label);
       },
 
-      _switchMaxBtn: function(){
+      _switchMaxBtn: function () {
         if (window.appInfo.isRunInMobile) {
           html.setStyle(this.maxNode, 'display', '');
-        }else{
+        } else {
           html.setStyle(this.maxNode, 'display', 'none');
         }
       },
 
-      _switchParentNode: function(){
+      _switchParentNode: function () {
         if (window.appInfo.isRunInMobile && this.domNode &&
           this.domNode.parentNode !== html.byId(jimuConfig.layoutId)) {
           html.place(this.domNode, jimuConfig.layoutId);
-        }else if(!window.appInfo.isRunInMobile && this.domNode &&
+        } else if (!window.appInfo.isRunInMobile && this.domNode &&
           this.domNode.parentNode !== html.byId(this.map.id)) {
           html.place(this.domNode, this.map.id);
         }
       },
 
-      _setFrameSize: function(contentHeight) {
+      _setFrameSize: function (contentHeight) {
         var h, openedPaneCount = 0;
 
         //openedPaneCount should >= 1
-        array.forEach(this.getChildren(), function(frame) {
+        array.forEach(this.getChildren(), function (frame) {
           if (!frame.folded) {
             openedPaneCount++;
           }
         }, this);
 
-        if(typeof contentHeight === 'undefined'){
+        if (typeof contentHeight === 'undefined') {
           contentHeight = html.getContentBox(this.containerNode).h;
         }
 
         h = (contentHeight - (this.getChildren().length - openedPaneCount) *
           this.getChildren()[0].titleHeight) / openedPaneCount;
-        array.forEach(this.getChildren(), function(frame) {
+        array.forEach(this.getChildren(), function (frame) {
           if (frame.folded) {
             html.setStyle(frame.domNode, {
               height: frame.titleHeight + 'px'
@@ -202,7 +208,7 @@ define(['dojo/_base/declare',
         }, this);
       },
 
-      createCloseBtn: function() {
+      createCloseBtn: function () {
         this.closeNode = html.create('div', {
           'class': 'close-btn',
           'role': 'button',
@@ -210,18 +216,18 @@ define(['dojo/_base/declare',
           'tabindex': 0
         }, this.btnsContainer);
 
-        this.own(on(this.closeNode, 'click', lang.hitch(this, function(evt) {
+        this.own(on(this.closeNode, 'click', lang.hitch(this, function (evt) {
           evt.stopPropagation();
           this.panelManager.closePanel(this);
         })));
 
-        this.own(on(this.closeNode, 'keydown', lang.hitch(this, function(evt) {
-          if(evt.keyCode === keys.ENTER || evt.keyCode === keys.SPACE){
+        this.own(on(this.closeNode, 'keydown', lang.hitch(this, function (evt) {
+          if (evt.keyCode === keys.ENTER || evt.keyCode === keys.SPACE) {
             this.panelManager.closePanel(this);
           }
           //not prevent user uses tab-key to widget's first focusable node, excluding groupPanel
-          else if(!evt.shiftKey && evt.keyCode === keys.TAB){
-            if(this.isGroupPanel){
+          else if (!evt.shiftKey && evt.keyCode === keys.TAB) {
+            if (this.isGroupPanel) {
               evt.preventDefault();
               this.firstTitleNode.focus();
             }
@@ -230,7 +236,7 @@ define(['dojo/_base/declare',
         })));
       },
 
-      createMaxBtn: function(){
+      createMaxBtn: function () {
         this.maxNode = html.create('div', {
           'class': 'max-btn',
           'role': 'button',
@@ -238,20 +244,20 @@ define(['dojo/_base/declare',
           'tabindex': 0
         }, this.btnsContainer);
 
-        this.own(on(this.maxNode, 'click', lang.hitch(this, function(evt) {
+        this.own(on(this.maxNode, 'click', lang.hitch(this, function (evt) {
           evt.stopPropagation();
           this.onMaxNodeClick();
         })));
 
-        this.own(on(this.maxNode, 'keydown', lang.hitch(this, function(evt) {
-          if(evt.keyCode === keys.ENTER || evt.keyCode === keys.SPACE){
+        this.own(on(this.maxNode, 'keydown', lang.hitch(this, function (evt) {
+          if (evt.keyCode === keys.ENTER || evt.keyCode === keys.SPACE) {
             evt.stopPropagation();
             this.onMaxNodeClick();
           }
         })));
       },
 
-      createFrame: function(widgetConfig) {
+      createFrame: function (widgetConfig) {
         var frame;
         if (this.config.widgets && this.config.widgets.length === 1 || !this.config.widgets) {
           frame = new BaseWidgetFrame();
@@ -261,17 +267,17 @@ define(['dojo/_base/declare',
             widgetManager: this.widgetManager
           });
 
-          aspect.after(frame, 'onFoldStateChanged', lang.hitch(this, function() {
+          aspect.after(frame, 'onFoldStateChanged', lang.hitch(this, function () {
             var openedPaneCount = 0;
 
             this._setFrameSize();
-            array.forEach(this.getChildren(), function(frame) {
+            array.forEach(this.getChildren(), function (frame) {
               if (!frame.folded) {
                 openedPaneCount++;
               }
             }, this);
 
-            array.forEach(this.getChildren(), function(frame) {
+            array.forEach(this.getChildren(), function (frame) {
               if (!frame.folded && openedPaneCount === 1) {
                 frame.foldEnable = false;
               } else {
@@ -284,7 +290,7 @@ define(['dojo/_base/declare',
         return frame;
       },
 
-      onFoldableNodeClick: function() {
+      onFoldableNodeClick: function () {
         this.inherited(arguments);
 
         if (this.windowState === 'minimized') {
@@ -296,7 +302,7 @@ define(['dojo/_base/declare',
         html.setAttr(this.maxNode, 'aria-label', this.headerNls.maxWindow);
       },
 
-      onMaxNodeClick: function() {
+      onMaxNodeClick: function () {
         if (this.windowState === 'maximized') {
           html.setAttr(this.maxNode, 'aria-label', this.headerNls.maxWindow);
           this.panelManager.normalizePanel(this);
@@ -310,7 +316,7 @@ define(['dojo/_base/declare',
         }
       },
 
-      moveTitle: function() {
+      moveTitle: function () {
         if (this.isFull) {
           if (this.folded) {
             html.setStyle(this.domNode, {

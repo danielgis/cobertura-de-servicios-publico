@@ -1,10 +1,12 @@
-.jimu-foldable-dijit{
+.jimu-foldable-dijit {
   position: relative;
 }
-.jimu-foldable-dijit .jimu-panel-title{
+
+.jimu-foldable-dijit .jimu-panel-title {
   position: relative;
 }
-.jimu-foldable-dijit>.jimu-panel-content{
+
+.jimu-foldable-dijit>.jimu-panel-content {
   position: absolute;
   left: 0;
   right: 0;
@@ -14,16 +16,20 @@
   overflow-x: hidden;
   overflow-y: auto;
 }
-.jimu-widget-frame.jimu-foldable-dijit>.jimu-panel-content{
+
+.jimu-widget-frame.jimu-foldable-dijit>.jimu-panel-content {
   padding: 14px;
 }
-.foldable-widget-frame{
+
+.foldable-widget-frame {
   overflow: hidden;
 }
-.jimu-foldable-panel{
+
+.jimu-foldable-panel {
   position: absolute;
 }
-.jimu-foldable-panel>.jimu-panel-title{
+
+.jimu-foldable-panel>.jimu-panel-title {
   color: white;
   cursor: pointer;
   background-color: #485566;
@@ -32,7 +38,8 @@
   font-weight: bold;
   display: flex;
 }
-.jimu-foldable-panel .title-label{
+
+.jimu-foldable-panel .title-label {
   height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -46,10 +53,12 @@
   margin: 0;
   font-size: 16px;
 }
-.jimu-foldable-panel .title-label:focus{
+
+.jimu-foldable-panel .title-label:focus {
   outline: none !important;
 }
-.jimu-foldable-panel .btns-container{
+
+.jimu-foldable-panel .btns-container {
   min-width: 70px;
   max-width: 105px;
   flex-grow: 0;
@@ -58,17 +67,20 @@
   margin-top: 2px;
   margin-right: 2px;
 }
-.jimu-rtl .jimu-foldable-panel .btns-container{
+
+.jimu-rtl .jimu-foldable-panel .btns-container {
   margin-right: 0;
   margin-left: 2px;
 }
-.jimu-foldable-panel .jimu-widget-frame .btns-container{
+
+.jimu-foldable-panel .jimu-widget-frame .btns-container {
   height: auto;
   margin: 0;
 }
+
 .jimu-foldable-panel .close-btn,
 .jimu-foldable-panel .max-btn,
-.jimu-foldable-panel .foldable-btn{
+.jimu-foldable-panel .foldable-btn {
   width: 35px;
   height: 100%;
   border-radius: 11px;
@@ -76,53 +88,60 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-.jimu-foldable-panel .close-btn{
+
+.jimu-foldable-panel .close-btn {
   background-image: url(images/x.png);
 }
-.jimu-foldable-panel .max-btn{
+
+.jimu-foldable-panel .max-btn {
   background-image: url(images/max.png);
 }
-.jimu-foldable-panel .max-btn.maximized{
+
+.jimu-foldable-panel .max-btn.maximized {
   background-image: url(images/normal.png);
 }
 
-.jimu-foldable-panel .foldable-btn{
-  background-image: url(images/fold_up.png);
-}
-.jimu-foldable-panel .foldable-btn.folded{
-  background-image: url(images/fold_down.png);
-}
-
-.jimu-ismobile .jimu-foldable-panel .foldable-btn{
-  background-image: url(images/fold_down.png);
-}
-.jimu-ismobile .jimu-foldable-panel .foldable-btn.folded{
+.jimu-foldable-panel .foldable-btn {
   background-image: url(images/fold_up.png);
 }
 
-.jimu-foldable-panel .jimu-widget-frame .foldable-btn{
+.jimu-foldable-panel .foldable-btn.folded {
+  background-image: url(images/fold_down.png);
+}
+
+.jimu-ismobile .jimu-foldable-panel .foldable-btn {
+  background-image: url(images/fold_down.png);
+}
+
+.jimu-ismobile .jimu-foldable-panel .foldable-btn.folded {
+  background-image: url(images/fold_up.png);
+}
+
+.jimu-foldable-panel .jimu-widget-frame .foldable-btn {
   background-image: url(images/minus.png);
 }
-.jimu-foldable-panel .jimu-widget-frame .foldable-btn.folded{
+
+.jimu-foldable-panel .jimu-widget-frame .foldable-btn.folded {
   background-image: url(images/plus.png);
 }
 
-.jimu-foldable-panel .close-tip{
+.jimu-foldable-panel .close-tip {
   position: absolute;
   left: 0;
   top: 0;
 }
 
-.foldable-widget-frame>.title{
+.foldable-widget-frame>.title {
   color: #86909c;
   background-color: #d9dde0;
   cursor: pointer;
 }
-.foldable-widget-frame>.title>.title-label{
+
+.foldable-widget-frame>.title>.title-label {
   font-size: 14px;
 }
 
 .foldable-widget-frame>.title:focus,
-.jimu-widget-frame.jimu-foldable-dijit>.jimu-panel-content:focus{
+.jimu-widget-frame.jimu-foldable-dijit>.jimu-panel-content:focus {
   outline-offset: -2px !important;
 }

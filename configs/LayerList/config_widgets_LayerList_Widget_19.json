@@ -6,7 +6,7 @@
   "contextMenu": {
     "ZoomTo": true,
     "Transparency": true,
-    "SetVisibilityRange": true,
+    "SetVisibilityRange": false,
     "EnableOrDisablePopup": true,
     "ControlLabels": true,
     "MoveupOrMovedown": true,
@@ -14,28 +14,28 @@
     "DescriptionOrShowItemDetailsOrDownload": false
   },
   "layerOptions": {
-    "cobertura_servicios_local_sa_dev_2_7270": {
+    "cobertura_servicios_local_sa_ws_7458": {
       "display": true
     },
-    "cobertura_servicios_local_ciai_dev_2_9150": {
+    "cobertura_servicios_local_ciai_ws_8602": {
       "display": true
     },
-    "cobertura_servicios_vivienda_saf_dev_2_507_2727": {
+    "cobertura_servicios_vivienda_saf_ws_881": {
       "display": false
     },
-    "cobertura_servicios_vivienda_saf_dev_2_507": {
+    "cobertura_servicios_limites_1981": {
+      "display": true
+    },
+    "cobertura_servicios_limites_1239": {
+      "display": true
+    },
+    "cobertura_servicios_limites_6689": {
+      "display": true
+    },
+    "cobertura_servicios_vivienda_saf_grid_20k_ws_6977": {
       "display": false
     },
-    "cobertura_servicios_vivienda_saf_grid_10k_dev_3_4373": {
-      "display": false
-    },
-    "cobertura_servicios_vivienda_saf_grid_20k_dev_3_5070": {
-      "display": false
-    },
-    "cobertura_servicios_local_ciai_dev_2_449": {
-      "display": false
-    },
-    "cobertura_servicios_local_ciai_dev_2_2865": {
+    "cobertura_servicios_local_ciai_ws_7777": {
       "display": false
     }
   }

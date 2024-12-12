@@ -5,25 +5,25 @@
     "respectCurrentMapScale": true
   },
   "layerState": {
-    "cobertura_servicios_local_sa_dev_2_7270": {
+    "cobertura_servicios_local_sa_ws_7458": {
       "selected": true
     },
-    "cobertura_servicios_local_ciai_dev_2_9150": {
+    "cobertura_servicios_local_ciai_ws_8602": {
       "selected": true
     },
-    "cobertura_servicios_vivienda_saf_dev_2_507_2727": {
+    "cobertura_servicios_vivienda_saf_ws_881": {
       "selected": false
     },
-    "cobertura_servicios_vivienda_saf_dev_2_507": {
-      "selected": false
+    "cobertura_servicios_limites_1981": {
+      "selected": true
     },
-    "cobertura_servicios_vivienda_saf_grid_10k_dev_3_4373": {
-      "selected": false
+    "cobertura_servicios_limites_1239": {
+      "selected": true
     },
-    "cobertura_servicios_vivienda_saf_grid_20k_dev_3_5070": {
-      "selected": false
+    "cobertura_servicios_limites_6689": {
+      "selected": true
     },
-    "cobertura_servicios_local_ciai_dev_2_449": {
+    "cobertura_servicios_vivienda_saf_grid_20k_ws_6977": {
       "selected": false
     }
   },

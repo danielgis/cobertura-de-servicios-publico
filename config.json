@@ -264,11 +264,28 @@
     },
     "widgets": [
       {
+        "name": "InfoSummary",
+        "version": "2.30",
+        "IsController": false,
+        "uri": "widgets/InfoSummary/Widget",
+        "config": "configs/InfoSummary/config_widgets_InfoSummary_Widget_38.json",
+        "index": 2,
+        "id": "widgets_InfoSummary_Widget_38"
+      },
+      {
+        "name": "Measurement",
+        "version": "2.30",
+        "uri": "widgets/Measurement/Widget",
+        "config": "configs/Measurement/config_widgets_Measurement_Widget_39.json",
+        "index": 3,
+        "id": "widgets_Measurement_Widget_39"
+      },
+      {
         "uri": "widgets/Legend/Widget",
         "version": "2.30",
         "id": "widgets_Legend_Widget_18",
         "name": "Legend",
-        "index": 2,
+        "index": 4,
         "config": "configs/Legend/config_widgets_Legend_Widget_18.json"
       },
       {
@@ -276,7 +293,7 @@
         "version": "2.30",
         "id": "widgets_LayerList_Widget_19",
         "name": "LayerList",
-        "index": 3,
+        "index": 5,
         "config": "configs/LayerList/config_widgets_LayerList_Widget_19.json"
       },
       {
@@ -284,7 +301,7 @@
         "version": "2.30",
         "uri": "widgets/BasemapGallery/Widget",
         "config": "configs/BasemapGallery/config_widgets_BasemapGallery_Widget_37.json",
-        "index": 5,
+        "index": 6,
         "id": "widgets_BasemapGallery_Widget_37"
       }
     ],

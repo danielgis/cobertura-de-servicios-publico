@@ -1,22 +1,13 @@
-define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin', "jimu/WidgetManager", "esri/tasks/QueryTask", "esri/tasks/query", "dojo/Deferred", "dojo/promise/all", 'esri/dijit/util/busyIndicator', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js'], function (declare, BaseWidget, _WidgetsInTemplateMixin, WidgetManager, QueryTask, Query, Deferred, all, BusyIndicator, jquery, select2) {
-  // import StatisticDefinition from "esri/tasks/StatisticDefinition"
+define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin', "jimu/WidgetManager", "esri/tasks/QueryTask", "esri/tasks/query", "dojo/Deferred", "dojo/promise/all", 'esri/dijit/util/busyIndicator', "jimu/dijit/Message", 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js'], function (declare, BaseWidget, _WidgetsInTemplateMixin, WidgetManager, QueryTask, Query, Deferred, all, BusyIndicator, Message, jquery, select2) {
 
   var fontAwesome = document.createElement('script');
   fontAwesome.src = 'https://use.fontawesome.com/releases/v5.3.1/js/all.js';
   document.head.appendChild(fontAwesome);
 
-  // add link an script
-  // <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-
   var select2Css = document.createElement('link');
   select2Css.rel = 'stylesheet';
   select2Css.href = 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css';
   document.head.appendChild(select2Css);
-
-  // const select2Js = document.createElement('script');
-  // select2Js.src = 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js';
-  // document.head.appendChild(select2Js);
 
   var isFirstLoad = false;
 
@@ -33,6 +24,16 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
     postCreate: function postCreate() {
       this.inherited(arguments);
       this.map.on("update-end", this.executeZoomExtentInitial.bind(this));
+    },
+    showMessageCs: function showMessageCs(message) {
+      var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'message';
+
+      var title = '' + this.nls.widgetTitle;
+      new Message({
+        type: type,
+        titleLabel: title,
+        message: message
+      });
     },
     onClickGroup: function onClickGroup(evt) {
       var indexGroupSelected = Array.from(evt.target.parentNode.children).indexOf(evt.target);
@@ -67,9 +68,14 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
       if (isFirstLoad) {
         return;
       }
+      this.executeHomeExtent();
+      // const homeWidget = WidgetManager.getInstance().getWidgetsByName("HomeButton");
+      // this.map.setExtent(homeWidget[0].homeDijit.extent);
+      isFirstLoad = true;
+    },
+    executeHomeExtent: function executeHomeExtent() {
       var homeWidget = WidgetManager.getInstance().getWidgetsByName("HomeButton");
       this.map.setExtent(homeWidget[0].homeDijit.extent);
-      isFirstLoad = true;
     },
     buildMainMenuCs: function buildMainMenuCs() {
       var _this = this;
@@ -125,11 +131,20 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
     buildFormSearchCs: function buildFormSearchCs() {
       var _this2 = this;
 
+      this.busyIndicator.show();
       var filters = this.groupSelected.filters;
       filters.sort(function (a, b) {
         return a.index - b.index;
       });
       this.containerBodyApCs.innerHTML = '';
+
+      var labelReset = document.createElement('p');
+      labelReset.classList.add('resetFilterClsCs');
+      labelReset.innerHTML = this.nls.restoreLabelCs;
+      this.containerBodyApCs.appendChild(labelReset);
+
+      labelReset.addEventListener('click', this.resetAllOpionSelected.bind(this));
+
       filters.forEach(function (filter, index) {
         var label = document.createElement('p');
         label.classList.add('labelComboBoxClsCs');
@@ -146,27 +161,29 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
           var urlFilter = _this2.urlLayerSelected || filter.url;
           var fieldsFilter = [filter.codeField, filter.nameField];
           _this2.getDataByFilter(urlFilter, fieldsFilter).then(function (response) {
-            _this2.makeOptionCs(response.features, select, filter.codeField, filter.nameField, filter.firstOption);
+            if (response.features.length === 1000) {
+              // disable select
+              $('#' + filter.codeField).prop("disabled", true);
+            } else {
+              $('#' + filter.codeField).prop("disabled", false);
+              _this2.makeOptionCs(response.features, select, filter.codeField, filter.nameField, filter.firstOption);
+            }
           }).catch(function (err) {
             console.error('err', err);
           });
         };
-        // select.select2({
-        //   tags: true,
-        //   onchange: this.onChangeFilterCs.bind(this)
-        // })
-        // select.addEventListener('change.select2', (event) => this.onChangeFilterCs(event, index));
-        // the same code as js vanilla with jquery
         _this2.containerBodyApCs.appendChild(select);
         $('#' + filter.codeField).on('select2:select', function (event) {
           return _this2.onChangeFilterCs(event, index);
         });
+        // $(`#${filter.codeField}`).on('select2:clear', (event) => this.onChangeFilterCs(event, index));
         $('#' + filter.codeField).select2({
           tags: true,
           placeholder: filter.firstOption
           // allowClear: true
         });
       });
+      this.busyIndicator.hide();
     },
     getDataByFilter: function getDataByFilter(url, fields) {
       var where = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.whereDefault;
@@ -189,6 +206,8 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
       return deferred.promise;
     },
     setExtentByFilter: function setExtentByFilter(url, where) {
+      var expand = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1.1;
+
       var self = this;
       var deferred = new Deferred();
       var queryTask = new QueryTask(url);
@@ -197,7 +216,7 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
       query.returnGeometry = true;
 
       queryTask.executeForExtent(query).then(function (response) {
-        self.map.setExtent(response.extent.expand(1.1), true);
+        self.map.setExtent(response.extent.expand(expand), true);
         deferred.resolve(response);
       }).catch(function (err) {
         console.error('err', err);
@@ -270,28 +289,63 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
       var responseFilter = void 0;
 
       var url = this.urlLayerSelected || currentFilter.url;
+      var layersSelected = this.layersSelected;
+
+      var webmap = this.map;
+
       return this.getDataByFilter(url, fields, where, false).then(function (response) {
         responseFilter = response;
-        if (!currentFilter.isZoom) {
+        if (!currentFilter.isZoom && !currentFilter.anotherZoom) {
           return null;
         }
-        if (responseFilter.features.length === 1 && responseFilter.features[0].geometry.type === 'point') {
-          return _this3.map.centerAndZoom(responseFilter.features[0].geometry, 17);
-        }
-        return _this3.setExtentByFilter(url, where);
+        if (currentFilter.isZoom) {
+          if (responseFilter.features.length === 1 && responseFilter.features[0].geometry.type === 'point') {
+            return _this3.map.centerAndZoom(responseFilter.features[0].geometry, 17);
+          }
+          if (responseFilter.features.length === 0) {
+            throw new Error('No se encontraron resultados de ' + _this3.labelLayerSelected + ' en esta ubicaci\xF3n');
+            // console.log("No se encontraron resultados");
+            // return;
+          }
+          return _this3.setExtentByFilter(url, where);
+        };
+        if (currentFilter.anotherZoom) {
+          var whereLimit = _this3.manageWhereLimits();
+          webmap.getLayer(currentFilter.anotherZoom.idLayer).setDefinitionExpression(whereLimit);
+          // if (selectedValue === '0') {
+          //   return;
+          // };
+          // const whereAnother = `${currentFilter.anotherZoom.field} = '${selectedValue}'`;
+          return _this3.setExtentByFilter(currentFilter.anotherZoom.url, whereLimit, expand = 1);
+        };
       }).then(function () {
+        if (responseFilter.features.length === 0) {
+          return;
+        }
         var promises = _this3.groupSelected.filters.map(function (filter, index) {
           if (selectedValue === '0') {
             var urlFilter = _this3.urlLayerSelected || filter.url;
             var fieldsFilter = [filter.codeField, filter.nameField];
             return _this3.getDataByFilter(urlFilter, fieldsFilter, where).then(function (data) {
-              _this3.makeOptionCs(data.features, document.getElementById(filter.codeField), filter.codeField, filter.nameField, filter.firstOption);
+              if (data.features.length === 1000) {
+                // disable select
+                $('#' + filter.codeField).prop("disabled", true);
+              } else {
+                $('#' + filter.codeField).prop("disabled", false);
+                _this3.makeOptionCs(data.features, document.getElementById(filter.codeField), filter.codeField, filter.nameField, filter.firstOption);
+              }
             });
           } else if (evt.target.id !== filter.codeField) {
             var _urlFilter = _this3.urlLayerSelected || filter.url;
             var _fieldsFilter = [filter.codeField, filter.nameField];
             return _this3.getDataByFilter(_urlFilter, _fieldsFilter, where).then(function (data) {
-              _this3.makeOptionCs(data.features, document.getElementById(filter.codeField), filter.codeField, filter.nameField, filter.firstOption);
+              if (data.features.length === 1000) {
+                // disable select
+                $('#' + filter.codeField).prop("disabled", true);
+              } else {
+                $('#' + filter.codeField).prop("disabled", false);
+                _this3.makeOptionCs(data.features, document.getElementById(filter.codeField), filter.codeField, filter.nameField, filter.firstOption);
+              }
             });
           }
         });
@@ -324,11 +378,40 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
         //       });
         //   });
       }).then(function () {
+        layersSelected.layersId.forEach(function (layer) {
+          // console.log('layer', layer);
+          // search fields in where, but not set definition expression
+          var verifyFields = webmap.getLayer(layer).fields.filter(function (field) {
+            if (where.includes(field.name)) {
+              return field.name;
+            };
+          });
+
+          if (verifyFields.length === 0) {
+            return;
+          }
+          webmap.getLayer(layer).setDefinitionExpression(where);
+        });
+        // return all(promises);
         _this3.busyIndicator.hide();
       }).catch(function (err) {
-        console.error('err', err);
+        _this3.showMessageCs(err.message, 'error');
+        // console.error('err', err);
         _this3.busyIndicator.hide();
       });
+    },
+    getCountByWhere: function getCountByWhere(ulr, where) {
+      var deferred = new Deferred();
+      var queryTask = new QueryTask(ulr);
+      var query = new Query();
+      query.where = where;
+      query.returnGeometry = false;
+      queryTask.executeForCount(query).then(function (response) {
+        deferred.resolve(response);
+      }).catch(function (err) {
+        deferred.reject(err);
+      });
+      return deferred.promise;
     },
     makeSelectorLayers: function makeSelectorLayers(layers) {
       var _this4 = this;
@@ -375,6 +458,7 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
       var layerSelected = this.groupSelected.layersForm.layers.find(function (layer) {
         return layer.id === event.target.id;
       });
+      this.layersSelected = layerSelected;
       if (layerSelected) {
         this.groupSelected.layersForm.layers.forEach(function (layer) {
           if (layer.id === event.target.id) {} else {
@@ -390,7 +474,9 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
             _this5.map.getLayer(layerId).setVisibility(true);
           };
         });
+
         this.urlLayerSelected = this.map.getLayer(layerSelected.layersId[0]).url;
+        this.labelLayerSelected = layerSelected.label;
       }
     },
     manageWhere: function manageWhere() {
@@ -407,6 +493,39 @@ define(['dojo/_base/declare', 'jimu/BaseWidget', 'dijit/_WidgetsInTemplateMixin'
       });
       // console.log('where', where.join(' AND '));
       return where.join(' AND ');
+    },
+    manageWhereLimits: function manageWhereLimits() {
+      var where = [];
+      this.groupSelected.filters.forEach(function (filter) {
+        if (filter.anotherZoom) {
+          var select = document.getElementById(filter.codeField);
+          // get value selected
+          var selectedIndex = select.selectedIndex;
+          if (selectedIndex > 1) {
+            // create where
+            var selectedValue = select.options[selectedIndex].value;
+            where.push('(' + filter.anotherZoom.field + ' = \'' + selectedValue + '\')');
+          };
+        }
+      });
+
+      if (where.length === 0) {
+        return this.whereDefault;
+      };
+      // console.log('where', where.join(' AND '));
+      return where.join(' AND ');
+    },
+    resetAllOpionSelected: function resetAllOpionSelected(evt) {
+      var _this6 = this;
+
+      // execute buildFormSearchCs
+      // this.busyIndicator.show();
+
+      this.buildFormSearchCs();
+      this.layersSelected.layersId.forEach(function (layerId) {
+        _this6.map.getLayer(layerId).setDefinitionExpression(_this6.whereDefault);
+      });
+      this.executeHomeExtent();
     }
   }
 
