@@ -60,23 +60,12 @@
       },
       "filters": [
         {
-          "codeField": "unidad_territorial",
-          "nameField": "unidad_territorial",
-          "label": "Unidad Territorial",
-          "type": "select",
-          "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_local_ciai_ws/FeatureServer/0",
-          "index": 0,
-          "firstOption": "Seleccione la Unidad Territorial",
-          "startupData": true,
-          "isZoom": true
-        },
-        {
           "codeField": "iddepa_local",
           "nameField": "departamento_local",
           "label": "Departamento",
           "type": "select",
           "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_local_ciai_ws/FeatureServer/0",
-          "index": 1,
+          "index": 0,
           "firstOption": "Seleccione el Departamento",
           "startupData": true,
           "isZoom": false,
@@ -92,7 +81,7 @@
           "label": "Provincia",
           "type": "select",
           "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_local_ciai_ws/FeatureServer/0",
-          "index": 2,
+          "index": 1,
           "firstOption": "Seleccione la Provincia",
           "startupData": true,
           "isZoom": false,
@@ -108,7 +97,7 @@
           "label": "Distrito",
           "type": "select",
           "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_local_ciai_ws/FeatureServer/0",
-          "index": 3,
+          "index": 2,
           "firstOption": "Seleccione el Distrito",
           "startupData": true,
           "isZoom": false,
@@ -124,8 +113,19 @@
           "label": "Centro poblado",
           "type": "select",
           "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_local_ciai_ws/FeatureServer/0",
-          "index": 4,
+          "index": 3,
           "firstOption": "Seleccione el Centro Poblado",
+          "startupData": true,
+          "isZoom": true
+        },
+        {
+          "codeField": "unidad_territorial",
+          "nameField": "unidad_territorial",
+          "label": "Unidad Territorial",
+          "type": "select",
+          "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_local_ciai_ws/FeatureServer/0",
+          "index": 4,
+          "firstOption": "Seleccione la Unidad Territorial",
           "startupData": true,
           "isZoom": true
         },
@@ -135,148 +135,6 @@
           "label": "Comité de Gestión",
           "type": "select",
           "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_local_ciai_ws/FeatureServer/0",
-          "index": 5,
-          "firstOption": "Seleccione el Comité de gestión",
-          "startupData": true,
-          "isZoom": true
-        }
-      ]
-    },
-    {
-      "name": "ubicaSaf",
-      "label": "Cuna\nMás\nUbica",
-      "description": "Herramienta de geolocalización",
-      "index": 1,
-      "logo": "./widgets/DynamicSearchWidgetCunaMas/images/logo_saf.png",
-      "color": "#ff007d",
-      "layersForm": {
-        "visible": false,
-        "layers": [
-          {
-            "index": 0,
-            "name": "SAF",
-            "label": "SAF",
-            "layersId": [
-              "cobertura_servicios_vivienda_saf_ws_881",
-              "cobertura_servicios_vivienda_saf_grid_20k_ws_6977"
-            ],
-            "selected": true,
-            "id": "SAF0",
-            "visible": true
-          },
-          {
-            "index": 1,
-            "name": "CIAI",
-            "label": "CIAI",
-            "layersId": [
-              "cobertura_servicios_local_ciai_ws_8602"
-            ],
-            "selected": false,
-            "id": "CIAI1",
-            "visible": true
-          },
-          {
-            "index": 2,
-            "name": "SA",
-            "label": "SA",
-            "layersId": [
-              "cobertura_servicios_local_sa_ws_7458"
-            ],
-            "selected": false,
-            "id": "SA2",
-            "visible": true
-          },
-          {
-            "index": 3,
-            "name": "CIAISA",
-            "label": "CIAI / SA",
-            "layersId": [
-              "cobertura_servicios_local_ciai_ws_8602",
-              "cobertura_servicios_local_sa_ws_7458"
-            ],
-            "selected": false,
-            "id": "CIAISA3",
-            "visible": true
-          }
-        ]
-      },
-      "filters": [
-        {
-          "codeField": "unidad_territorial",
-          "nameField": "unidad_territorial",
-          "label": "Unidad Territorial",
-          "type": "select",
-          "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_vivienda_saf_ws/FeatureServer/0",
-          "index": 0,
-          "firstOption": "Seleccione la Unidad Territorial",
-          "startupData": true,
-          "isZoom": true
-        },
-        {
-          "codeField": "familia_iddepa",
-          "nameField": "familia_departamento",
-          "label": "Departamento",
-          "type": "select",
-          "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_vivienda_saf_ws/FeatureServer/0",
-          "index": 1,
-          "firstOption": "Seleccione el Departamento",
-          "startupData": true,
-          "isZoom": false,
-          "anotherZoom": {
-            "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_limites/FeatureServer/0",
-            "field": "iddepa",
-            "idLayer": "cobertura_servicios_limites_6689"
-          }
-        },
-        {
-          "codeField": "familia_idprov",
-          "nameField": "familia_provincia",
-          "label": "Provincia",
-          "type": "select",
-          "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_vivienda_saf_ws/FeatureServer/0",
-          "index": 2,
-          "firstOption": "Seleccione la Provincia",
-          "startupData": true,
-          "isZoom": false,
-          "anotherZoom": {
-            "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_limites/FeatureServer/0",
-            "field": "idprov",
-            "idLayer": "cobertura_servicios_limites_6689"
-          }
-        },
-        {
-          "codeField": "familia_ubigeo",
-          "nameField": "familia_distrito",
-          "label": "Distrito",
-          "type": "select",
-          "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_vivienda_saf_ws/FeatureServer/0",
-          "index": 3,
-          "firstOption": "Seleccione el Distrito",
-          "startupData": true,
-          "isZoom": false,
-          "anotherZoom": {
-            "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_limites/FeatureServer/0",
-            "field": "iddist",
-            "idLayer": "cobertura_servicios_limites_6689"
-          }
-        },
-        {
-          "codeField": "familia_idccpp",
-          "nameField": "familia_ccpp",
-          "label": "Centro poblado",
-          "type": "select",
-          "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_vivienda_saf_ws/FeatureServer/0",
-          "index": 4,
-          "firstOption": "Seleccione el Centro Poblado",
-          "startupData": true,
-          "isZoom": true
-        },
-        {
-          "codeField": "cod_cg",
-          "nameField": "comite_gestion",
-          "label": "Comité de Gestión",
-          "type": "select",
-          "url": "https://geosisfoh.midis.gob.pe/server/rest/services/Hosted/cobertura_servicios_vivienda_saf_ws/FeatureServer/0",
           "index": 5,
           "firstOption": "Seleccione el Comité de gestión",
           "startupData": true,
